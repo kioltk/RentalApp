@@ -3,8 +3,8 @@ import {
   useNavigation as baseUseNavigation,
 } from "@react-navigation/native";
 import {
-  NativeStackNavigationProp,
   createNativeStackNavigator,
+  NativeStackNavigationProp,
 } from "@react-navigation/native-stack";
 
 import React from "react";
@@ -24,11 +24,8 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const { Navigator, Group, Screen } = Stack;
 
-export const useNavigation = () => {
-  const navigation =
-    baseUseNavigation<NativeStackNavigationProp<RootStackParamList>>();
-  return navigation;
-};
+export const useNavigation = () =>
+  baseUseNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
 const App = () => {
   return (
