@@ -3,7 +3,6 @@ import { Pressable, Text, View } from "react-native";
 import { Customer, Offer } from "../../api/types";
 import { useNavigation } from "../../App";
 import { OfferCard } from "../../components/offers/OfferCard";
-import Title from "../../components/Title";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
 import { api } from "../../api/api";
 import { useMutation } from "@tanstack/react-query";
@@ -11,10 +10,11 @@ import {
   CustomerForm,
   useCustomerForm,
 } from "../../components/customers/CustomerForm";
+import { styled } from "nativewind";
 
-const Section = ({ children }: { children: React.ReactNode }) => (
-  <View className="px-4 py-2">{children}</View>
-);
+const Section = styled(View, "px-4 py-2");
+
+const Title = styled(Text, "text-2xl");
 
 export const CreateReservationScreen = ({
   route: {
